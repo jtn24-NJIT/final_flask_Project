@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+    <strong> What Are Some Fundamental Parts of Git? </strong> <br><br>
+
+    <strong>Branches: </strong> A light, movable pointer to the various commits of a Git project. By default, this points to the most
+    recent version of the master branch. The functionality of this comes in being able to work upon different branches in order to implement
+    new features, which in turn allow for easy development without worrying about effecting other working processes/features. The usage
+    of branches are also useful in collaborative projects, in that they allow for different people to work on different features/branches
+    without worrying of affecting the main branch/main development negatively. Branches can also be made at anytime alongside the main
+    development branch.</p>
+    <img src="https://i0.wp.com/digitalvarys.com/wp-content/uploads/2019/06/GIT-Branchand-its-Operations.png?fit=1024%2C563&ssl=1", alt="An example of a project with multiple branches"/>
+    <br><br><br>
+
+    <strong>Merge: </strong> Utilizing different branches, merging allows for the integration of different branches unto a singular
+    branch. By default, this is the current branch that is being worked upon. Merging is often done in order to incorporate development
+    upgrades or issue fixes unto the master, but some conflicts can arise from conflicts within specific files (IE: same file changed differently
+    within the two branches). </p>
+    <img src="https://wac-cdn.atlassian.com/dam/jcr:c6db91c1-1343-4d45-8c93-bdba910b9506/02%20Branch-1%20kopiera.png?cdnVersion=243", alt="An example of a merge"/>
+    <br><br><br>
+
+    <strong>Commit: </strong> Capturing a 'snapshot' of a project's current changes, a commit is essentially a 'milestone' of the
+    git project. Recording the content of every changed file/every file being committed, each commit make up a git's versioncontrol
+    and contain metadata such as contents, messages, the author, timestamps and more. Undoing a commit is also not recommended, as they
+    can confuse collaborators within a group project; it is better to undo only locally.</p>
+    <img src="https://backlog.com/app/themes/backlog-child/assets/img/guides/git/basics/rewriting_history_001.png" alt="Git Commit Example">
+    <br><br><br>
+
+    <strong>Tags: </strong> Essentially markers within a repository's history, tags are used to note an important part within a
+    repository's history (which are often marking points of version history). Tags within Git can be listed, searched for, removed,
+    'checked out' and created within two types: Lightweight (similar to a branch with no future changes, it's a pointer to a specific commit)
+    and annotated (stored as full objects in the Git database, they contain meta-data about the creator). Tags can also be shared to remote
+    servers, but in order to do so they have to be explicitly specified. </p>
+    <img src="https://assets-global.website-files.com/5ff621612284ed73d44c11f3/5ff621612284edbe0f4c1c58_5f19a241624e0709908d965b_robin-github-issue-tag-system.png" alt="Github Tag Classification">
+    <br><br><br>
+
+    <strong>Repositories: </strong> A directory or storage space for a Git project, a repository can be stored locally or online in order
+    to keep track of code files, text files, images, etc. Repositories can be owned individually or shared for collaborative projects, and
+    have no restriction on how many collaborators there can be (private repositories can be made as well, but they require a
+    Github pro account). Public repositories as well are unrestricted in that anyone online can see them, and to ensure that Github does
+    not its processing burned out, there are various limits set in place for various files (IE, raw text files over 512 KB are displayed
+    in plain text). </p>
+    <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/develop-app-with-salesforce-cli-and-source-control/add-salesforce-dx-project-to-source-control/images/bf546ec3acd964673bf5f6302125fd93_step-4-github-and-git-clones.png" alt="Github remote repository example">
+    <br><br><br>
+{% endblock %}

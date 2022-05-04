@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <strong> What is AAA Testing?  </strong> <br><br>
+
+    <strong>Arrange: </strong> AAA Testing is a pattern of testing which helps structure test cases. Arrange, the first step
+    of AAA testing, sets up the test cases. When first creating a test, upon the first step the user/developer should
+    ask themselves: Does this test require any objects or special settings? Does it need to prep a database? Does it
+    log into a web app? And so on, but ultimately this step helps ensure what kind of tests are needed and any prior
+    requirements in order to properly test.</p>
+    <br>
+
+    <strong>Act: </strong> The second step, act, means to act upon the target behavior. This step should cover the main
+    things to be tested upon a web application. From calling a function, method or REST API, interacting with a web page
+    and so on, this step is focused upon the target behavior of a test.</p>
+    <br>
+
+    <strong>Assert: </strong> The final step, assert, means to verify a test's response/results. Stimulated by act steps
+    that bring about said responses, sometimes these can be as simple as checking if the right word or number was returned.
+    Other times, they might be used to check multiple parts of a system. Overall, this step just determines if a test
+    passes or fails.</p>
+    <img src="https://miro.medium.com/max/1400/1*_MiurxVJ3baRaV6s7r4vwA.png" alt="AAA Testing Diagram">
+    <br><br><br>
+
+    <strong>Example: </strong> The following image is an example of AAA testing, each line demonstrating a part of it. The first
+    of arranging is the simple defining of the tuple object, which consists of the two numbers used per the calculation. The second
+    of acting is a more advanced/important part of the test, in that it creates an instance of interacting with the Multiplication
+    class defined in the dunder init file, which is located in the calculations directory. The final line is an example of assertion, in that
+    it is asserting that multiplications is in fact a process of calculations, and that the provided data tuple is valid for it.</p>
+    <img src="{{ url_for('static', filename='images/Screenshot_1.jpg') }}" class="d-block w-75 mx-auto" alt="Example of AAA Testing">
+    <br><br><br>
+
+    <strong>Why is Testing Important?: </strong> Testing is extremely important in programming as it allows for quicker and easier
+    bug fixing and verification of working status. Without specific tests to deal with every aspect of an application, bug
+    checking and fixing of any issues becomes immensely more difficult as the system does the work instead of something
+    the user has defined definitively. For professional and collaborative projects, specific testing and following of defined
+    testing patterns allows for both trust in all involved and clearer understanding of a project should it need to be modified
+    or fixed.</p>
+    <img src="https://colaninfotech.com/wp-content/uploads/2019/03/5-Reasons-Why-Software-Testing-is-Important.jpg" alt="Software Testing Image">
+    <br><br><br>
+{% endblock %}

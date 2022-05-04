@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <strong> How Does Our Simple Calculator Utilize Pylint? </strong> <br><br>
+
+    <strong>Our Simple Calculator: </strong> Throughout project 2, we had worked upon a calculator class with multiple
+    different functions contained within separate directories. Throughout this page, basic concepts will be described
+    towards the nature of testing in programming, as well as various principles and terminologies that are utilized
+    to help best make our calculator easier to modify and in the future.</p>
+
+    <strong>What is Pylint & Pytest?: </strong> Testing in Python is extremely important and beneficial, Python itself having created
+    two particularly popular ways to test. Pylint is one of them, and is a tol which checks for errors within the code as well as
+    enforcing a coding standard to ensure commonality. Looking for "code smells" as well and type errors, beyond more technical checks
+    it also sees if particular blocks of code can be used to judge a code's complexity. While not the most perfect due to its automated
+    processes (thus it may warn about something a user did intentionally), pytest however is more strictly defined by the user/developer.
+    With docker/virtual environments, in creating a project a tests directory can be made and populated with _test files, upon
+    running pytest within a terminal it quickly returns the result of each test as well as specific error messaging should one or
+    more of the tests fail.</p>
+    <img src="https://www.techbeamers.com/wp-content/uploads/2019/03/Pylint-Tool.png", alt="Pylint"/>
+    <br><br><br>
+
+    <strong>Encapsulation in Our Calculator: </strong> Encapsulation is utilized throughout much of our project, as every operations
+    (add, subtract and multiply) are all isolated, static methods that have the simplest possible and singular operation to be
+    handled.</p>
+
+    <strong>Inheritance in Our Calculator: </strong> Inheritance is demonstrated within the calculations directory, in that it has
+    two functions which are used in every instance in order to ensure the correct data is used (create, a classmethod for tuples and
+    convert_args_to_tuple_of_float to ensure that any data would be converted into floats for calculations). </p>
+
+    <strong>Polymorphism in Our Calculator: </strong> Polymorphism is demonstrated within the history directory, in that
+    it has multiple functions with similar names and yet unique, overriding operations to keep track of specific operations
+    as they are being used. Essentially, the method/process of getting an operation performed tracked into history is
+    the same for everyone; but they have to be unique to ensure that they are properly tracked.</p>
+
+    <strong>Abstraction in Our Calculator: </strong> Abstraction is demonstrated within the calculations directory, in that
+    the class of Calculation consists of extremely simple functions that handle every operation. Since every operation
+    obtains its values from tuples, only a singular tuple related method is needed. To ensure that all calculations
+    can be performed without worry of different data value types being used, a singular method is used to convert them
+    all into floats.</p>
+    <img src="https://th.bing.com/th/id/R.48a93004b5f0a223bcd3648a039fbcba?rik=L11adKqZt%2fxJTg&riu=http%3a%2f%2fi.stack.imgur.com%2f4Mcwq.png&ehk=%2b7FAU3bkAa%2fANK2U6aoqwGpP3UmgEPlP4n3X4ylw5e8%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Calculator image">
+{% endblock %}

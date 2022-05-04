@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <strong> What is Continuous Integration and Deployment? </strong> <br><br>
+
+    <strong>Continuous Delivery: </strong> A software development disciple, continuous development builds software so that it, "...can be
+    released to production at any time." According to Martin Fowler, to achieve this the software: Is deployable throughout its life cycle,
+    prioritizes keeping the software deployable over working new features, can return fast, automated feedback on the production readiness
+    of the system any time somebody makes a change to them and can perform push-button deployments of any version of the software to any
+    environment on demand. This is done by continuous integration of the software by the dev team, building executable and running automated
+    tests on said executables. According to Fowler, "The key test is that a business sponsor could request that the current development
+    version of the software can be deployed into production at a moment's notice - and nobody would bat an eyelid, let alone panic."
+    In using continuous delivery, the benefits are as follows: Reduced deployment risk (smaller changes = less risk), believable progress
+    (ultimately looks better in terms of progression) and user feedback (earlier and quicker deployment = quicker and more frequent feedback).
+    </p>
+    <img src="https://flexagon.com/wp-content/uploads/2017/02/Continuous-Delivery-schema.png" alt="Continuous Delivery Cycle"/>
+    <br><br><br>
+
+    <strong>Continuous Integration: </strong> A software development practice, continuous integration involves several members of a team
+    integrating their work frequently (typically daily) that is verified by an automated build and test. The benefit of this is that it,
+    "...leads to significantly reduced integration problems and allows a team to develop cohesive software more rapidly." This in turn
+    allows for simpler integration (especially for larger projects). Originating from Kent Beck's, "Extreme Programming," while it may
+    not require a particular tool it is useful to use a server for it (IE: CruiseControl). In terms of, "key practices," Fowler suggests:
+    Maintaining a single source repository to help keep track of all the files and their changes with version control systems, automating
+    the build to allow for easier introduction to a project for new members, make the build self-testing to easily catch bugs, etc. As a
+    whole, continuous integration allows every collaborator to see what is happening and simplify communication.
+    </p>
+    <img src="https://www.pagerduty.com/wp-content/uploads/2020/01/continuous-integration-2.png" alt="Continuous Integration"/>
+    <br><br><br>
+
+    <strong>Project Implementation: </strong> To do this automatically upon heroku, changes are made according to whether or not we are pushing
+    or pulling from the master branch. Specified in dev.yml and prod.yml within .github and workflows (directories). To effect the prod heroku
+    app, a git push must be made to the master branch. Once that is done, it additionally goes through pytest, extracts metadata from Docker
+    using specified credentials as well as updates the heroku prod app accordingly. To effect the dev heroku app, a git pull must be made from the
+    master branch. Again performing a pytest, it then ONLY updates the heroku dev app accordingly with specified credentials.
+    </p>
+    <img src="https://miro.medium.com/max/640/0*h-oNfEHFjEB2hOpZ.png" alt="CI/CD Diagram"/>
+    <br><br><br>
+
+    <strong>Much of the info written can be found in Martin Fowler's Website, https://www.martinfowler.com. </strong>
+{% endblock %}
