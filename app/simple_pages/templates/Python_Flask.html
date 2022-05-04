@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+    <strong> What is Pytest & Flask? </strong> <br><br>
+
+    <strong>Pytest: </strong> Pytest is a method used in creating projects which in turn can make tests to ensure project functionality.
+    Per this project, we had created a separate tests folder which has an empty __init__.py file as well as our own created _test.py
+    files. Per this first project, the most important files were the context_process_test.py file and the simple_pages_test.py files.
+    The context test file was used to test the flask environment, as well as the info used in the copyright data (which was used
+    to check date and time formats... these were done with functions called: test_context_variables_environment, test_context_variables_year,
+    and test_context_currency_format which in turn all used local/test variables and tested response status codes of 200 and asserting the content
+    in response data. All data used were in the __init__.py file within the context_processors directory). The simple_pages_test file first
+    tested the page names within the navigation at the top (this is done in the test_request_main_menu_links function) and then every page returned
+    a 200 status code response via first getting the page (client.get function) and then seeing the response (assert response.status_code). Finally,
+    it tests and ensures that a page that doesn't exist returns a 404 status code. These simple pages in turn were created via first extending
+    base.html and then having local content which was separated with block content and endblock (base.html is defined in the templates folder).</p>
+    <img src="https://headlesstesting.com/assets/blog/2020/08/pytest-c314ee6102852a44185ef3893effc3c4f4cc8e8eef823b83214ecb2d72f4eff8.png", alt="Pytest Image"/>
+    <br><br><br>
+
+    <strong>Link to Github: </strong> https://github.com/jtn24-NJIT/flask_auth </p>
+    <strong>Flask Blueprint Documentation: </strong> https://flask.palletsprojects.com/en/2.0.x/blueprints/ </p>
+    <strong>Github Flask Documentation: </strong> https://github-flask.readthedocs.io/en/latest/ </p>
+    <strong>Testing Flask Applications with Pytest: </strong> https://flask.palletsprojects.com/en/2.0.x/testing/ </p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1200px-Flask_logo.svg.png", alt="Python Flask Logo"/>
+    <br><br><br>
+
+    <strong> <u> Project Outline Explanation </u></strong> </p>
+    <strong>docker-compose.yml file (root directory): </strong> Specifies docker version & its services of flask which runs on ports 80:5000 as well
+    as the volumes of .:/home/myuser. </p> <br>
+
+    <strong>DockerFile (root directory): </strong> Specifies what extra features need to be downloaded, in particular it takes from python 3.8
+    and copies from requirements.txt. </p> <br>
+
+    <strong>Readme.md (root directory): </strong> Used by Github to more simply explain the repository/project as created by the user. Can be
+    auto-generated as well during creation of project, in particular this project contains 2 badges of the development workflow and the prod
+    workflow. </p> <br>
+
+    <strong>Requirements.txt (root directory): </strong> Used by the DockerFile to install specific features, such as pytest, gunicorn and Flask. </p>
+    </p> <br>
+
+    <strong>dev.yml (root directory -> .github directory -> workflows directory): </strong> The development workflow file, it specifies that
+    upon a pull request to the master branch, python 3.8 is installed alongside the features in requirements.txt and runs pytest with -vv (shows
+    more specific details about each test). Afterwards, it also deploys to the dev app of the project upon heroku utilizing the api key (secret
+    specified on github) and the author's username and email. </p> <br>
+
+    <strong>prod.yml (root directory -> .github directory -> workflows directory): </strong> The production workflow file, it specifies that
+    upon a push request to the master branch, python 3.8 is installed alongside the features in requirements.txt and runs pytest with -vv (shows
+    more specific details about each test). Afterwards, it also builds a container on Docker via utilizing the author's username and password
+    (secrets specified on github) as well as extracts the user's image(s) upon Docker. Finally, it deploys to the prod app of the project upon
+    heroku utilizing the api key (secret specified on github) and the author's username and email. </p> <br>
+
+    <strong>__init__.py (root directory -> app directory -> context_processors directory): </strong> Utilized by the base.html file, this file
+    has a specific message created by the user as well as create objects which are utilized in the copyright message on the website. </p> <br>
+
+    <strong>__init__.py (root directory -> app directory -> simple_pages directory): </strong> Utilized by the project, this file imports
+    needed functions from flask and jinja2, allowing for easier implementation of different pages as well as returning a 404 status
+    error if said page cannot be found. </p> <br>
+
+    <strong> Continuous_Integration_and_Deployment.html, Docker.html, Git.html, index.html & Python_Flask.html (root directory ->
+        app directory -> simple_pages directory -> templates directory): </strong> Utilized by the project, this directory and the files
+    within all extend the base.html file and has unique block content file within to provide specific content. </p> <br>
+
+    <strong>style.css (root directory -> app directory -> static directory -> css directory): </strong> Utilized by the html files, this file
+    provides a small aesthetic detail to each html file (larger, 200% sized text). </p> <br>
+
+    <strong>base.html (root directory -> app directory -> templates directory): </strong> Utilized by the html files, this file
+    provides a basis for each page on the website, allowing for the navigation bar to appear on every page and allow for easy
+    navigation. </p> <br>
+
+    <strong>__init__.py (root directory -> app directory): </strong> Importing flask, the simple_pages directory and the context processors,
+    this file has a function of create_app which creates and configures an instance of the flask app with a secret key and registering a
+    'blueprint' from the simple_pages directory. </p> <br>
+
+    <strong>run.py (root directory -> app directory): </strong> Importing create_app from app, this file is only needed for configuration/
+    working with Gunicorn in order to serve the app in production. </p> <br>
+
+    <strong>conftest.py (root directory -> tests directory): </strong> Importing pytest and create_app from app, this file defines the following
+    functions: Application (making the app itself), client (makes the http client) and runner (makes the task runner). </p> <br>
+
+    <strong>context_process_test.py (root directory -> tests directory): </strong> Importing datetime and getenv from the operating system, this
+    file tests if the environment is actually working for Flask (200 status code response) and tests the two different data types used in the
+    copyright message (data and currency). </p> <br>
+
+    <strong>simple_pages_test.py (root directory -> tests directory): </strong> Testing the website, this file first ensures that the navigation
+    bar is properly named and goes to the right link, as well as ensures that every page does exist for the website (200 status code). Finally,
+    it checks if a page that should not exist does properly return a 404 status code.</p> <br>
+{% endblock %}

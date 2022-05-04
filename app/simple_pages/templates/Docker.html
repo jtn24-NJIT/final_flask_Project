@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+    <strong> What is Docker? </strong> <br><br>
+
+    <strong>Containers: </strong> A standard unit of software, a docker container packages up code and all of its dependencies to ensure
+    efficient, reliable and quick running of said application from one computing environment to others. Thanks to docker, a container
+    allows for easy execution of a package of software as well as everything needed to run it (IE: system tools, system libraries,
+    settings, etc.). These containers in turn allow for quicker and smaller ways to run applications without the typical usage of a
+    virtual machine which requires guest operating systems and a hypervisor (in comparison to a container engine and singular operating
+    system for docker containers). </p>
+    <img src="https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/container-what-is-container.png?itok=vle7kjDj", alt="Docker Container Diagram"/>
+    <br><br><br>
+
+    <strong>Images: </strong> Automatically generated when a docker container is made, a docker image is a read-only template that
+    contains a set of instructions for making an application run on docker. When ran, it can become one of many instances of a container.
+    Made up of multiple layers (which build off from the previous layer with some changes), one of their advantages is that they are
+    reusable, which means they can be deployed on any host and across multiple projects (thus saving time). Similar to a git commit, a
+    docker image is like a snapshot of a docker container... but they are also immutable, making it so new software or configuration
+    does not change the image.</p>
+    <img src="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/container-docker-introduction/media/docker-containers-images-registries/taxonomy-of-docker-terms-and-concepts.png", alt="Docker Image Diagram"/>
+    <br><br><br> <br>
+
+    <strong>Docker Hub Link for Project: </strong> https://hub.docker.com/repository/docker/jtn24/first-website </p>
+    <strong>How to Run Project: </strong> <br>
+    1. docker pull jtn24/first-website <br>
+    2. docker images (use it to see image ID) <br>
+    3. docker run -d -p 8080:80 imageID <br>
+    4. docker ps (shows container ID) <br>
+    5. docker exec -it containerID /bin/bash (opens a bash shell into the container) <br><br>
+
+    <strong> <u> Docker Commands </u></strong> </p>
+
+    <strong>Docker Pull Command: </strong> docker pull user/image, essentially the same as a git pull (gets an image to local from docker hub). </p>
+
+    <strong>Docker Push Command: </strong> docker push user/image:tag, essentially the same as a git push (uploads an image from local to docker hub),
+    often times the tag is the version being pushed.</p>
+
+    <strong>Docker Images Command: </strong> docker images, essentially shows all currently running images. </p>
+
+    <strong>Docker rmi Command: </strong> docker rmi image_id/image_name, removes an image as specified. </p>
+
+    <strong>Docker ps Command: </strong> docker ps, shows information about currently running images. </p>
+
+    <strong>Docker commit Command: </strong> docker commit container_id image_name:tag, allows for creation of an image from a container. </p>
+
+    <strong>Docker start Command: </strong> docker start container_id/container_name, starts running a container. </p>
+
+    <strong>Docker exec Command: </strong> docker exec containerID /bin/bash, runs a command in a running container. </p>
+
+    <strong>Docker stop Command: </strong> docker stop container_id/container_name, stops a running container. </p>
+
+    <strong>Docker Version Command: </strong> docker –version, shows the current version of docker that's installed. </p>
+
+{% endblock %}

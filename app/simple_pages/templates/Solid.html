@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+    <strong> How Does Our Simple Calculator Demonstrate SOLID? </strong> <br><br>
+
+    <strong>Our Simple Calculator: </strong> Throughout project 2, we had worked upon a calculator class with multiple
+    different functions contained within separate directories. Throughout this page, the SOLID principle will be
+    described... Our calculator in particular follows the factory method pattern, in which our interface for creating the project
+    is user-defined, but the subclasses of the operations decide which class to instantiate. Our calculator in itself demonstrates
+    SOLID through having singular, isolated functions that limit interaction to prevent potential malfunction due to crossing
+    operations, the extension of every operation within different classes without allowing for potentially damaging modification,
+    every operation is isolated enough to allow for easy addition of new operations like division, and there is little
+    if not none reliance upon the derived/based classes for the parent/upper classes.</p>
+
+    <strong>Single-Responsibility Principle: </strong> The S in SOLID, single-responsibility principle states that a class should
+    only have one job as it should have only one reason to change. Should a class have multiple functions, the editing/modification
+    of one could end up negatively affecting the other functions.</p>
+    <img src="https://dotnettutorials.net/wp-content/uploads/2018/06/Single-Responsibility-Principle-in-C-768x244.png", alt="Single-Responsibility Principle"/>
+    <br><br><br>
+
+    <strong>Open-Closed Principle: </strong> The O in SOLID, the open-closed principle states that classes should be open for extension
+    but closed for modification. In essence, should a class be worked upon/modified by another developer, they can do so through
+    extending the class and thus not modifying the original class itself. </p>
+    <img src="https://1.bp.blogspot.com/-M01ajBmLSlg/TixAYzm_eyI/AAAAAAAAA9Y/g0qLrJfFCMA/s1600/OpenClosed.png" alt="Open-Closed Principle">
+    <br><br><br>
+
+    <strong>Liskov Substitution Principle: </strong> The L in SOLID, the Liskov substitution principle states that classes within
+    a program should be replaceable with instances of their subtypes without causing error. Derived classes should be able
+    to extend their base class(es) without changing their behavior, for if this principle is violated, a concept may have been
+    prematurely generalized and an unnecessary superclass might end up being created. Liskov's principle also increases efficiency
+    in limiting how much code would be needed to be modified when adding/modifying a new subclass.</p>
+    <img src="https://th.bing.com/th/id/R.498b7e1673ede23984b3ac3267c99e2e?rik=dXcUz6U2UR%2bJ1A&riu=http%3a%2f%2fwww.javabrahman.com%2fwp-content%2fuploads%2fLiskovSubstitutionPrinciple.png&ehk=l%2bsqKqGcVCGc%2b2rowp3YlVcN02ctzoy8w2ToXac%2fD9U%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Liskov Substitution Principle">
+    <br><br><br>
+
+    <strong>Interface Segregation Principle: </strong> The I in SOLID, the interface segregation principle states that clients
+    should not be forced to implement interfaces that they don't use; favoring multiple small interfaces based upon groups of
+    methods that serve individual submodules rather than one large one. This principle ensures that clients are not using unnecessary
+    interfaces, which in turn helps improve performance as the code can then ignore currently unused interfaces/actions that take
+    up processing.</p>
+    <img src="https://th.bing.com/th/id/R.d04e9753c5b81d4e46369b8dcf47af49?rik=2%2fYAjY2m%2fmRHXw&riu=http%3a%2f%2fwww.javabrahman.com%2fwp-content%2fuploads%2fInterface-Segregation-Principle-before-applying.png&ehk=29wlKzbKFwF7IowfDDoyoieRHosHd%2b5cQoAQhEEcGns%3d&risl=&pid=ImgRaw&r=0" alt="Interface Segregation Principle">
+    <br><br><br>
+
+    <strong>Dependency Inversion Principle: </strong> The final letter of D in SOLID, the dependency inversion principle states that
+    classes should depend on abstraction rather than concretion. High-level modules must not depend on lower level modules, and this
+    principle allows for decoupling. Details should depend upon abstraction, not the other way around. </p>
+    <img src="https://i.ytimg.com/vi/ykGW0Zen0YY/maxresdefault.jpg" alt="Dependency Inversion Principle">
+    <br><br><br>
+{% endblock %}

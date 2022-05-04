@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block content %}
+    <strong> The Terminology of Object-Oriented Programming </strong> <br><br>
+
+    <strong>Instantiation: </strong> The creation of an instance or template, in programming instantiation is fundamental to
+    object-oriented programming. When instantiation is done in Python, a new class/object first created with dunder new and dunder
+    init methods which are called whenever a class is instantiated. From this new instance, children classes, derived methods
+    and other such important terminology and functionality forms.</p>
+    <img src="https://www.cdslab.org/python/notes/object-oriented-programming/instantiation/progEvol.png", alt="Instantiation Diagram"/>
+    <br><br><br>
+
+    <strong>Object: </strong> Any real world object or data type, in programming an object is an entity which has a state and behavior.
+    Consisting of a state (the attributes and properties of it), a behavior (the methods of it as well as its relationships to other
+    projects) and an identity (a unique identifier to allow for interaction with other objects), in Python an object must first have
+    a pre-provided value known as self, and can have a dunder init method to provide initial values to any instantiated object. The
+    image below provides a diagram of such.</p>
+    <img src="https://user.oc-static.com/upload/2018/12/19/15452218134233_Capture%20d%E2%80%99e%CC%81cran%202018-12-19%20a%CC%80%2013.16.39.png", alt="Object diagram"/>
+    <br><br><br>
+
+    <strong>Class: </strong> A collection of objects, in programming classes subsist of the base properties which the objects are
+    being created. Containing some attributes and methods, classes in Python are defined by the keyword class, and have publicly
+    accessible variables known as attributes which can be accessed by the dot operator. The image below demonstrates a specific
+    example of a class called car.</p>
+    <img src="data:image/png;base64,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" alt="Car Class example">
+    <br><br><br>
+
+    <strong>Namespace: </strong> A collection of currently defined symbolic names along with information about an object,
+    namespace is comparable to a dictionary data in that there is a set relation of key (object names) and values (the objects
+    themselves). These fall into four types: Built-in (which contains all of Python's build-in objects which is available
+    during the entirety of run-time), global (which consist of any names defined at the level of the main program and remains
+    until the interpreter terminates), local (a namespace/function that exists within another function/namespace) and
+    enclosing (which is the surrounding namespace/function that holds the local namespace). The following image demonstrates
+    the scope/size of these different namespaces. </p>
+    <img src="https://files.realpython.com/media/t.fd7bd78bbb47.png" alt="Namespace diagram">
+    <br><br><br>
+
+    <strong>Constructor: </strong> Specific code, in programming a constructor is called whenever a new instance of a class is
+    created. Preparing the class/object for use, they are similar to instance methods; but differ in that they have no
+    explicit return type and are not implicitly inherited. They also have the task of initializing an object's data members and
+    of establishing the invariant should the invariant be invalid due to some failure, as well as different rules for scope
+    modifiers and usually the same name as the declaring class.</p>
+    <img src="https://i.ytimg.com/vi/4Vxz6wK4wFI/maxresdefault.jpg" alt="Constructor image">
+    <br><br><br>
+
+    <strong>Fixture: </strong> Having explicit names and are based upon being reliable and consistent, in programming fixtures
+    are utilized in testing and help initialize setup services, state or other operating environments. Accessed by test functions
+    through arguments, each fixture often has a parameter named after it within the test function's definition. Having
+    explicit names and usability to simple unit testing to complex functional testing, fixtures allow for easy 'teardown'
+    logic no matter how many are being used and without concern for singular care per error. Fixtures are mostly used
+    in the first step of AAA, arrange. </p>
+    <img src="https://www.stechies.com/userfiles/images/py-fix-18.jpg" alt="Fixture example">
+    <br><br><br>
+
+    <strong>Type Hint: </strong> Used for testing and error checking, in programming type hints are utilized to explicitly declare
+    the data type of variables when they are declared. Available in more modern versions of python (3.5 or greater), when utilized
+    they help ensure that specific errors (such as trying to use a string input for a factorial function) are caught, and help
+    reinforce understanding of a code's architecture. The downside to using this however is that they somewhat penalize start-up
+    time, but it is often worth it to implement type hints in order to allow for easier debugging should an error arise.</p>
+    <img src="https://image.slidesharecdn.com/pycontw2017-170611053101/95/the-benefits-of-type-hints-27-638.jpg?cb=1497159443" alt="Type Hint example">
+    <br><br><br>
+
+    <strong>Type Cast: </strong> Similar to type hints, type cast in programming is used to manually convert a variable data type
+    to an acceptable form in order to prevent errors of incompatible data being used in functions. In python, type casting can
+    be done implicitly (automatic conversion, no user involvement required) and explicitly (requires user input/manual setting
+    of data types for the function being executed). The following image shows the potential data types that can be used for
+    explicit type casting.</p>
+    <img src="https://i.ytimg.com/vi/CDO8UryVX5o/maxresdefault.jpg" alt="Type Cast table">
+    <br><br><br>
+
+    <strong>Unit Test: </strong> Singular/focused testing, in programming unit testing is the process of testing the individual
+    components of a program/application. Breaking up a larger project into small, individual parts which have only a few inputs
+    and only one output, unit testing falls into two categories: Automated (which is faster and more accurate) and manual (done
+    by the developer/user, there has been a process however that has made this more efficient). With unit testing,
+    the process of bug checking becomes more focused and singular towards specific functions as well as easier to remove
+    test code when a final product/version is shipped.</p>
+    <img src="https://th.bing.com/th/id/R.149839188a7033de1a5d546b42fb05a5?rik=9KbI%2bJe%2fpOI4qw&riu=http%3a%2f%2fwww.testingdocs.com%2fwp-content%2fuploads%2fUnitTestMethod.jpg&ehk=s%2bw3vTuHLXJCenchsGkO7h2BXYZ%2bufcD2sknKmKwPIs%3d&risl=&pid=ImgRaw&r=0" alt="Unit Testing diagram">
+    <br><br><br>
+
+    <strong>Static: </strong> Lacking in activity, in programming static means that something (be it a variable, method, property,
+    etc.) has an unchanging, preserved state even beyond their scope and throughout the program's runtime. Not initialized within
+    new scopes, they can be accessed via dot operators and only one copy of it is shared by all objects of a class.</p>
+
+    <strong>Instance Method: </strong> A basic method, an instance method must have one parameter of self which points to an
+    instance of itself when called. With this parameter, it can freely access attributes and other methods upon itself
+    which allows for easier state modification and modification of its class. The image below provides a diagram of all
+    the methods.</p>
+
+    <strong>Instance Property: </strong> Defined within a class, instance properties are properties that require an instance
+    that is created with the help of the class name itself. Without these properties, these properties may not be accessible
+    and can cause an undefined output error if they are left uninstantiated.</p>
+
+    <strong>Static Method: </strong> Marked with a @staticmethod flag, static methods does not have a self parameter or a cls
+    parameter, and thus cannot modify object state nor class state. They are restricted in what data can be accessed, and
+    thus are useful for namespacing methods. The image below provides a diagram of all methods.</p>
+
+    <strong>Static Property: </strong> Similar to an instance property, a static property is a property defined within a class;
+    but do not change throughout the program's runtime. Unchanging, an example of a static property could be the voltage provided
+    to a specific property in that this amount is (or at least per our example) unchanging.</p>
+    <img src="https://pynative.com/wp-content/uploads/2021/08/python_class_method_vs_static_method_vs_instance_method.png" alt="Methods diagram">
+    <br><br><br>
+
+    <strong>Encapsulation: </strong> The action of enclosing something, in programming encapsulation is a fundamental concept of
+    OOP in that it is the idea of wrapping data and the methods of said data within a singular unit. This in turn allows for
+    privatization of variables and methods to prevent accidental modification, which in turn also prevents one type of data
+    from accessing another and raises security/confidentiality of data. This in turn creates two types of members: Protected (which
+    are members of a class that can't be accessed outside it, but can be accessed from within and are defined in python via
+    prefix underscore) and private (which are similar to protected members, but the class members declared private are neither
+    accessible outside the class and any base class... these can be defined in python via a prefix double underscore). </p>
+    <img src="https://i.pinimg.com/originals/97/94/af/9794af595762fd3d36f03c6ca168ac19.jpg" alt="Encapsulation diagram">
+    <br><br><br>
+
+    <strong>Inheritance: </strong> The capability to derive or inherit certain properties, in programming inheritance is an
+    extremely useful capability. Deriving properties from a base class unto child classes, inheritance is utilized as it
+    helps represent relationships well, allows for easy re-usability without repetition and is transitive (class C which inherits
+    from class B which inherits from class A also has class A properties). Inheritance can also be done in multiple levels,
+    in that a child can have multiple base classes. The image below provides a diagram of this in the form of polygons.</p>
+    <img src="https://www.dariawan.com/media/images/oop-uml-inheritance-polymorphism.width-400.png" alt="Inheritance example">
+    <br><br><br>
+
+    <strong>Polymorphism: </strong> The condition of having multiple forms, in programming polymorphism is the same function
+    name being utilized for different types. Being in-built or user defined, polymorphism allows for easier creation of multiple
+    classes as well as usage of functions upon different data types. For example, the len function in Python can be used both
+    to count the number of characters in a string, as well how many items there is in a list. When used for classes/objects,
+    polymorphism allows for inheritance; which is used to share and allow for overwriting of common features. The image below
+    demonstrates an example of this in the form of a 'parent' animal class, with two 'children' classes which inherit multiple
+    features, but overrides/has a unique feature for each in the form of the sound each animal makes.</p>
+    <img src="https://javatutorial.net/wp-content/uploads/2017/10/java-polymorphism-featured-image-1280x720.png" alt="Polymorphism diagram">
+    <br><br><br>
+
+    <strong>Abstraction: </strong> The simplification of objects to just be broad/more important details, in programming abstraction
+    is the process of making a class a sort of blueprint for more detailed classes. This is done in order to allow child classes
+    to be build from an abstract class, which contains abstract method(s) which have a declaration, but not an implementation.
+    This in turn allows for the quicker creation of child classes, as it provides a common interface for different implementations.
+    In Python, a module can be imported to provide a base for defining abstract classes called ABC. The image below shows an example
+    of this in the form of two abstract classes: A person and a job.</p>
+    <img src="https://i.ytimg.com/vi/1eSCCQPBqP0/maxresdefault.jpg" alt="Abstraction examples">
+    <br><br><br>
+
+    <strong>Overview of SOLID: </strong> Introduced in 2000 by Robert C. Martin in his paper, "Design Principles and Design Patterns,"
+    SOLID is an acronym for 5 different design principles. This was made in order to create projects that were more understandable,
+    flexible and maintainable. Each part of SOLID is more explained in the SOLID page, as well as an example of how a simple calculator
+    project demonstrates the principles of SOLID.</p>
+    <img src="https://media.proprofs.com/images/QM/user_images/2236918/1520206100.jpg" alt="SOLID table">
+    <br><br><br>
+
+    <strong>Overview of Design Patterns: </strong> In object-oriented programming, design patterns consists of description of certain
+    objects and classes, as well as the attributes and dependencies of the class. Being reusable and thus able to speed up
+    production, they can fall within creational patterns (which implement and support the creation of objects through
+    using inheritance, structural (which helps define relationships between objects) and behavioral which define the behavior
+    of said objects; facilitating communication between multiple objects).</p>
+    <img src="https://cdn-images-1.medium.com/max/1600/1*M22DR3WPqbWXWidYIq2GwA.png" alt="Design Pattern diagram">
+    <br><br><br>
+{% endblock %}
