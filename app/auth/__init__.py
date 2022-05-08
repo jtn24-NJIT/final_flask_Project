@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash
 from app.auth.decorators import admin_required
 from app.auth.forms import login_form, register_form, profile_form, security_form, user_edit_form, create_user_form
 from app.db import db
-from app.db.models import User
+from app.db.models import User, Transaction
 from flask_mail import Message
 
 auth = Blueprint('auth', __name__, template_folder='templates')
@@ -80,9 +80,9 @@ def logout():
 @auth.route('/dashboard/<int:page>', methods=['GET'])
 @login_required
 def dashboard(page):
-    # Show location table and allow for export options
-    # If locations hasn't been uploaded, blank instead
-    data = current_user.locations
+    # Show transactions table and allow for export options
+    # If transactions hasn't been uploaded, blank instead
+    data = Transaction.query.all()
     try:
         return render_template('dashboard.html',data=data)
     except TemplateNotFound:

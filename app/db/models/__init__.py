@@ -15,7 +15,7 @@ transaction_user = db.Table('transaction_user', db.Model.metadata,
 class Transaction(db.Model,SerializerMixin):
     __tablename__ = 'transactions'
     id = db.Column(db.Integer, primary_key=True)
-    AMOUNT = db.Column(db.FLOAT(), nullable=False, unique=False)
+    AMOUNT = db.Column(db.Float(), nullable=False, unique=False)
     TYPE = db.Column(db.String(6), nullable=False, unique=False)
 
     def __init__(self, AMOUNT, TYPE):
@@ -32,7 +32,7 @@ class User(UserMixin, db.Model):
     registered_on = db.Column('registered_on', db.DateTime)
     active = db.Column('is_active', db.Boolean(), nullable=False, server_default='1')
     is_admin = db.Column('is_admin', db.Boolean(), nullable=False, server_default='0')
-    locations = db.relationship("Transaction",
+    transactions = db.relationship("Transaction",
                     secondary=transaction_user, backref="users")
 
     def __init__(self, email, password, is_admin):

@@ -37,9 +37,11 @@ def transactions_upload():
         filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
         form.file.data.save(filepath)
         list_of_transactions = []
+        current_user.balance = 0.0
         with open(filepath) as file:
             csv_file = csv.DictReader(file)
             for row in csv_file:
+                current_user.balance += row['AMOUNT'].FLOAT
                 transaction_individual = Transaction.query.filter_by(AMOUNT=row['AMOUNT']).first()
                 if transaction_individual is None:
                     current_user.transactions.append(Transaction(row['AMOUNT'],row['TYPE']))
@@ -48,13 +50,19 @@ def transactions_upload():
                     current_user.transactions.append(transaction_individual)
                     db.session.commit()
 
-
         current_user.transactions = list_of_transactions
         db.session.commit()
-
         return redirect(url_for('transactions.transactions_browse'))
 
     try:
         return render_template('upload.html', form=form)
+    except TemplateNotFound:
+        abort(404)
+
+@transactions.route('/transactions_datatables/', methods=['GET'])
+def browse_transactions_datatables():
+    data = Transaction.query.all()
+    try:
+        return render_template('browse_transactions_datatables.html',data=data)
     except TemplateNotFound:
         abort(404)
