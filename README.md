@@ -2,12 +2,12 @@ Hello, my name is Jake Tyler Nhan. I am a fourth year NJIT student, majoring in 
 
 # Project Setup
 
-[![Production Workflow 1](https://github.com/jtn24-NJIT/final_flask_Project/actions/workflows/prod.yml/badge.svg?branch=master)](https://github.com/jtn24-NJIT/final_flask_Project/actions/workflows/prod.yml)
+[![Production Workflow 1](https://github.com/jtn24-NJIT/final_flask_Project/actions/workflows/prod.yml/badge.svg)](https://github.com/jtn24-NJIT/final_flask_Project/actions/workflows/prod.yml)
 
 * [Production Deployment](https://jtn24-final-proj-prod.herokuapp.com/)
 
 
-[![Development Workflow 3.8](https://github.com/jtn24-NJIT/final_flask_Project/actions/workflows/dev.yml/badge.svg?branch=master)](https://github.com/jtn24-NJIT/final_flask_Project/actions/workflows/dev.yml)
+[![Development Workflow 3.8](https://github.com/jtn24-NJIT/final_flask_Project/actions/workflows/dev.yml/badge.svg)](https://github.com/jtn24-NJIT/final_flask_Project/actions/workflows/dev.yml)
 
 * [Developmental Deployment](https://jtn24-final-proj-dev.herokuapp.com/)
 
