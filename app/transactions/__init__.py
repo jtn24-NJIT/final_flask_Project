@@ -48,13 +48,13 @@ def transaction_upload():
         with open(filepath) as file:
             csv_file = csv.DictReader(file)
             for row in csv_file:
-                # current_user.balance += row['AMOUNT'].FLOAT
                 transaction_individual = Transaction.query.filter_by(AMOUNT=row['AMOUNT']).first()
+                # current_user.balance += transaction_individual.AMOUNT
                 if transaction_individual is None:
-                    current_user.transactions.append(Transaction(row['AMOUNT'],row['TYPE']))
+                    current_user.transactions.append(Transaction(row['AMOUNT'],row['TYPE'])).FLOAT
                     db.session.commit()
                 else:
-                    current_user.transactions.append(transaction_individual)
+                    current_user.transactions.append(transaction_individual).FLOAT
                     db.session.commit()
 
         return redirect(url_for('transactions.browse_transactions'))
