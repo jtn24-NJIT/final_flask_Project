@@ -22,6 +22,12 @@ class Transaction(db.Model,SerializerMixin):
         self.AMOUNT = AMOUNT
         self.TYPE = TYPE
 
+    def serialize(self):
+        return {
+            'AMOUNT': self.AMOUNT,
+            'TYPE': self.TYPE,
+        }
+
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)

@@ -113,8 +113,11 @@
         passwordField.onkeyup = function () {
             // Validate lowercase letters
             let lowerCaseLetters = /[a-z]/g;
+            // Validate uppercase letters
             let upperCaseLetters = /[A-Z]/g;
+            // Validate special letters
             let specialCharacters = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
+            // Validate minimum length of password
             let passwordMinLength = 6;
 
             if(passwordField.value.length >= passwordMinLength) {
