@@ -82,7 +82,7 @@ def logout():
 def dashboard(page):
     # Show transactions table and allow for export options
     # If transactions hasn't been uploaded, blank instead
-    data = Transaction.query.all()
+    data = current_user.transactions
     try:
         return render_template('dashboard.html',data=data)
     except TemplateNotFound:
