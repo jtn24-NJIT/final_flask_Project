@@ -16,46 +16,13 @@ transactions = Blueprint('transactions', __name__,
 
 @transactions.route('/transactions', methods=['GET'], defaults={"page": 1})
 @transactions.route('/transactions/<int:page>', methods=['GET'])
-def transactions_browse(page):
+def browse_transactions(page):
     page = page
-    per_page = 1000
+    per_page = 10
     pagination = Transaction.query.paginate(page, per_page, error_out=False)
     data = pagination.items
     try:
         return render_template('browse_transactions.html',data=data,pagination=pagination)
-    except TemplateNotFound:
-        abort(404)
-
-@transactions.route('/transactions/upload', methods=['POST', 'GET'])
-@login_required
-def transactions_upload():
-    form = csv_upload()
-    if form.validate_on_submit():
-        log = logging.getLogger("myApp")
-
-        filename = secure_filename(form.file.data.filename)
-        filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
-        form.file.data.save(filepath)
-        list_of_transactions = []
-        current_user.balance = 0.0
-        with open(filepath) as file:
-            csv_file = csv.DictReader(file)
-            for row in csv_file:
-                current_user.balance += row['AMOUNT'].FLOAT
-                transaction_individual = Transaction.query.filter_by(AMOUNT=row['AMOUNT']).first()
-                if transaction_individual is None:
-                    current_user.transactions.append(Transaction(row['AMOUNT'],row['TYPE']))
-                    db.session.commit()
-                else:
-                    current_user.transactions.append(transaction_individual)
-                    db.session.commit()
-
-        current_user.transactions = list_of_transactions
-        db.session.commit()
-        return redirect(url_for('transactions.transactions_browse'))
-
-    try:
-        return render_template('upload.html', form=form)
     except TemplateNotFound:
         abort(404)
 
@@ -64,5 +31,35 @@ def browse_transactions_datatables():
     data = Transaction.query.all()
     try:
         return render_template('browse_transactions_datatables.html',data=data)
+    except TemplateNotFound:
+        abort(404)
+
+@transactions.route('/transactions/upload', methods=['POST', 'GET'])
+@login_required
+def transaction_upload():
+    form = csv_upload()
+    if form.validate_on_submit():
+        log = logging.getLogger("myApp")
+
+        filename = secure_filename(form.file.data.filename)
+        filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+        form.file.data.save(filepath)
+        # current_user.balance = 0.00
+        with open(filepath) as file:
+            csv_file = csv.DictReader(file)
+            for row in csv_file:
+                # current_user.balance += row['AMOUNT'].FLOAT
+                transaction_individual = Transaction.query.filter_by(AMOUNT=row['AMOUNT']).first()
+                if transaction_individual is None:
+                    current_user.transactions.append(Transaction(row['AMOUNT'],row['TYPE']))
+                    db.session.commit()
+                else:
+                    current_user.transactions.append(transaction_individual)
+                    db.session.commit()
+
+        return redirect(url_for('transactions.browse_transactions'))
+
+    try:
+        return render_template('upload_transactions.html', form=form)
     except TemplateNotFound:
         abort(404)
