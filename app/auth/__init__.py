@@ -83,7 +83,6 @@ def dashboard(page):
     # Show transactions table and allow for export options
     # If transactions hasn't been uploaded, blank instead
     data = current_user.transactions
-   # balance = current_user.balance
     try:
         return render_template('dashboard.html',data=data)
     except TemplateNotFound:

@@ -44,19 +44,16 @@ def transaction_upload():
         filename = secure_filename(form.file.data.filename)
         filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
         form.file.data.save(filepath)
-        # current_user.balance = 0.00
         with open(filepath) as file:
             csv_file = csv.DictReader(file)
             for row in csv_file:
                 transaction_individual = Transaction.query.filter_by(AMOUNT=row['AMOUNT']).first()
-                # current_user.balance += transaction_individual.AMOUNT
                 if transaction_individual is None:
-                    current_user.transactions.append(Transaction(row['AMOUNT'],row['TYPE'])).FLOAT
+                    current_user.transactions.append(Transaction(row['AMOUNT'],row['TYPE']))
                     db.session.commit()
                 else:
-                    current_user.transactions.append(transaction_individual).FLOAT
+                    current_user.transactions.append(transaction_individual)
                     db.session.commit()
-
         return redirect(url_for('transactions.browse_transactions'))
 
     try:
