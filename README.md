@@ -1,4 +1,4 @@
-Hello, my name is Jake Tyler Nhan. I am a fourth year NJIT student, majoring in a Bachelor's degree in Computer Science. This is the repo for the fourth and final project of IS 218, SEC. 004 of Spring 2022. In this project, there is a simple login system that also allows for uploading of csv transaction files.
+Hello, my name is Jake Tyler Nhan. I am a fourth year NJIT student, majoring in a Bachelor's degree in Computer Science. This is the repo for the fourth and final project of IS 218, SEC. 004 of Spring 2022. In this project, there is a simple login system that also allows for uploading of csv transaction files; which also tracks each user's account balance.
 
 # Project Setup
 
