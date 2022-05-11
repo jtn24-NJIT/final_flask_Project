@@ -1,8 +1,9 @@
-"""This makes the test configuration setup"""
+"""
+This makes the test configuration setup
+"""
+# pylint: disable=redefined-outer-name
 import os
 import pytest
-
-from flask import current_app
 
 from app import create_app, User
 from app.db import db
@@ -16,7 +17,7 @@ def application():
         db.create_all()
         yield application
         db.session.remove()
-        # This line drops the database tables after the test runs, ensuring any records made are deleted
+        # Drop the database tables after the test runs, ensuring that any records made are deleted
         db.drop_all()
     return application
 

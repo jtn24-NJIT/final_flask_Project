@@ -12,7 +12,7 @@ def test_request_main_menu_links(client):
 def test_auth_pages(client):
     """ This ensures that dashboard, register and login appear following a proper login"""
     response = client.get("/dashboard")
-    """ User is not yet logged in, a "moved temporarily" rather than "found" return code """
+    # User is not yet logged in, a "moved temporarily" rather than "found" return code
     assert response.status_code == 302
     response = client.get("/register")
     assert response.status_code == 200
