@@ -1,4 +1,6 @@
-"""This tests the pages"""
+"""
+This tests the authentication pages
+"""
 
 def test_request_main_menu_links(client):
     """This ensures that login & register appear on the index page"""
@@ -8,8 +10,9 @@ def test_request_main_menu_links(client):
     assert b'href="/register"' in response.data
 
 def test_auth_pages(client):
-    """This ensures that dashboard, register and login appear when going to link"""
+    """ This ensures that dashboard, register and login appear following a proper login"""
     response = client.get("/dashboard")
+    # User is not yet logged in, a "moved temporarily" rather than "found" return code
     assert response.status_code == 302
     response = client.get("/register")
     assert response.status_code == 200
