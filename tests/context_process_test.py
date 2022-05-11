@@ -1,9 +1,11 @@
-""" Testing context variables such as flask env & the copyright message """
+"""
+Testing context variables such as flask env & the copyright message
+"""
 import datetime
 from os import getenv
 
 def test_context_variables_environment(client):
-    """This test checks if the environment is printed"""
+    """ This test checks if the environment is printed """
     response = client.get("/")
     env = getenv('FLASK_ENV', None)
     test_string = f"Environment: {env}"
@@ -23,7 +25,7 @@ def test_context_variables_year(client):
     assert content in response.data
 
 def test_context_currency_format(client):
-    """This tests checks if the copyright and current year are printed"""
+    """This tests checks if a simple price is printed"""
     response = client.get("/")
     test_string = "$100"
     content = bytes(test_string, 'utf-8')
