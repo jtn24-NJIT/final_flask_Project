@@ -1,6 +1,6 @@
 Hello, my name is Jake Tyler Nhan. I am a fourth year NJIT student, majoring in a Bachelor's degree of Computer Science. This is the repository for the fourth and final project of IS 218, SEC. 004 of Spring 2022. In this project, there is a simple login system in which admin users are able to uploade csv transaction files; which also tracks each user's account balance to display on the dashboard.
 
-MAKE SURE TO UPLOAD TRANSACTION FILE FIRST BEFORE GOING TO TRANS MGMT(DT), OR ERROR MIGHT APPEAR
+UPLOAD TRANSACTION FILE FIRST BEFORE GOING TO TRANS MGMT(DT), OR ERROR MIGHT APPEAR
 
 # Project Setup
 
