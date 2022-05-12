@@ -34,3 +34,18 @@ def test_upload_csv_denied(application):
     with application.test_client(user = None) as client:
         response = client.get('/songs/upload')
         assert response.status_code == 404
+
+def test_user_balance_calculation(application):
+    """ Testing if user.balance is properly calculated """
+    application.test_client_class = FlaskLoginClient
+    user = User('surmenko@hmpoeao.com', 'beEp@29*', 1)
+    db.session.add(user)
+    db.session.commit()
+
+    assert user.email == 'surmenko@hmpoeao.com'
+    assert user.balance == 0.00
+
+    user.balance += 3.25
+    assert user.balance == 3.25
+    user.balance -= 2.15
+    assert user.balance == 1.10
