@@ -1,4 +1,3 @@
-import logging
 from flask import Blueprint, render_template, redirect, url_for, flash, current_app, abort
 from flask_login import login_user, login_required, logout_user, current_user
 from jinja2 import TemplateNotFound
@@ -40,7 +39,6 @@ def register():
             flash('Congratulations, you are now a registered user!', "success")
 
             return redirect(url_for('auth.login'), 302)
-
         else:
             flash('Already Registered')
             return redirect(url_for('auth.login'), 302)
@@ -101,7 +99,6 @@ def edit_profile():
         return redirect(url_for('auth.dashboard'))
     return render_template('profile_edit.html', form=form)
 
-
 @auth.route('/account', methods=['POST', 'GET'])
 def edit_account():
     user = User.query.get(current_user.get_id())
@@ -130,13 +127,11 @@ def browse_users():
     return render_template('browse.html', titles=titles, add_url=add_url, edit_url=edit_url, delete_url=delete_url,
                            retrieve_url=retrieve_url, data=data, User=User, record_type="Users")
 
-
 @auth.route('/users/<int:user_id>')
 @login_required
 def retrieve_user(user_id):
     user = User.query.get(user_id)
     return render_template('profile_view.html', user=user)
-
 
 @auth.route('/users/<int:user_id>/edit', methods=['POST', 'GET'])
 @login_required
@@ -152,7 +147,6 @@ def edit_user(user_id):
         current_app.logger.info("edited a user")
         return redirect(url_for('auth.browse_users'))
     return render_template('user_edit.html', form=form)
-
 
 @auth.route('/users/new', methods=['POST', 'GET'])
 @login_required
@@ -170,7 +164,6 @@ def add_user():
             flash('Already Registered')
             return redirect(url_for('auth.browse_users'))
     return render_template('user_new.html', form=form)
-
 
 @auth.route('/users/<int:user_id>/delete', methods=['POST'])
 @login_required

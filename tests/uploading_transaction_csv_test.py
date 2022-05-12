@@ -41,10 +41,8 @@ def test_user_balance_calculation(application):
     user = User('surmenko@hmpoeao.com', 'beEp@29*', 1)
     db.session.add(user)
     db.session.commit()
-
     assert user.email == 'surmenko@hmpoeao.com'
     assert user.balance == 0.00
-
     user.balance += 3.25
     assert user.balance == 3.25
     user.balance -= 2.15
